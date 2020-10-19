@@ -1,19 +1,12 @@
 
 <h2>My Heroes</h2>
 <ul class="heroes">
-	<li *ngFor="let hero of heroes" (click)="onSelect(hero)">
+	<li 
+	[class.selected]="hero === selectedHero"
+	*ngFor="let hero of heroes" (click)="onSelect(hero)">
 		<span class="badge">{{hero.id}}</span> {{hero.name}}
 	</li>
 </ul>
-
-<!-- <div>
-	<p>{{exdatapipe.name | uppercase}}</p>
-	<p>{{exdatapipe.name | lowercase}}</p>
-	<p>{{exdatapipe.cur | currency:'id'}}</p>
-	<p>{{exdatapipe.per | percent }}</p>
-	<p>{{exdatapipe.birthday | date}}</p>
-	<p>{{exdatapipe.numberDec | number}}</p>
-</div> -->
 
 <div *ngIf="selectedHero">
 	 <h2>{{selectedHero.name | uppercase}} Details</h2>
