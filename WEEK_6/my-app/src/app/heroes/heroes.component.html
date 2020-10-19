@@ -1,0 +1,18 @@
+<h2>{{hero.name | uppercase}} Details</h2>
+<div><span>id: </span>{{hero.id}}</div>
+<div>
+  <label>name:
+    <input [(ngModel)]="hero.name" placeholder="name"/>
+  </label>
+</div>
+
+<div>
+	<p>{{exdatapipe.name | uppercase}}</p>
+	<p>{{exdatapipe.name | lowercase}}</p>
+	<p>{{exdatapipe.cur | currency:'id'}}</p>
+	<p>{{exdatapipe.per | percent }}</p>
+	<p>{{exdatapipe.birthday | date}}</p>
+	<p>{{exdatapipe.numberDec | number}}</p>
+	
+	
+</div>
