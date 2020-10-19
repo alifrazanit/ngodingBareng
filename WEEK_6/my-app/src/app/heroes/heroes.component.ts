@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { Heroes } from './heroes.ts';
-
+import { Heroes } from './heroes';
+import { HEROES } from './mock-heroes';
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit {
-	hero: Heroes = {
-		id:1,
-		name:'Windstorm'
+	heroes = HEROES;
+	selectedHero: Hero;
+	onSelect(hero: Hero): void {
+	  this.selectedHero = hero;
+	  console.log(hero);
 	}
+	
 	exdatapipe = {
 		name: 'Alif Razan Saputra',
 		numberDec: 80.84,
@@ -21,6 +24,9 @@ export class HeroesComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit(): void {
+		console.log(this.hero);
 	}
+
+	
 
 }
